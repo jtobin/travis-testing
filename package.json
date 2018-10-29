@@ -4,8 +4,9 @@
   "description": "Testing Travis",
   "main": "index.js",
   "scripts": {
+    "build": "truffle compile",
     "ganache": "ganache-cli --gasLimit 6000000 > /dev/null &",
-    "pretest": "truffle compile && npm run ganache",
+    "pretest": "npm run build && npm run ganache",
     "test": "truffle test",
     "posttest": "pkill -f ganache-cli"
   },
